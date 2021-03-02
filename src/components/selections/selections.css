@@ -1,0 +1,54 @@
+
+
+.container{
+
+    display: flex;
+  
+    background: none;
+    align-items: center;
+    margin-bottom: 250px;
+  
+    
+}
+
+.rock{
+
+    background: none;
+    font-size: 5rem;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    
+  
+}
+
+.scissors{
+
+    background: none;
+    font-size: 5rem;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+.paper{
+
+    background: none;
+    font-size: 5rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  
+}
+
+.scissors:hover{
+    transform: scale(1.2);
+    
+}
+
+.paper:hover{
+    transform: scale(1.2);
+}
+
+.rock:hover{
+    transform: scale(1.2);
+}
