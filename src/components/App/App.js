@@ -24,19 +24,20 @@ setUserMove(value)
   }
 /// lock in player move when button is clicked
 
- //functions to update scores
- function addScore(){
-  setUserScore(userScore++)
-        }
-  
-        function minusScore(){
-          setUserScore(userScore - 1)
-                }
+ 
 
  
   useEffect(() => {
     
 
+    //functions to update scores
+ function addScore(){
+  return setUserScore(userScore + 1)
+        }
+  
+        function minusScore(){
+          return setUserScore(userScore + 1)
+                }
 //Game logic is below
 
 //paper choice
@@ -95,7 +96,7 @@ if (userMove === "scissors" && randomMove === "scissors" ){
       console.log(`computer picked ${randomMove}`)
       console.log( `you picked ${userMove}`)
       
-  }, [randomMove, userScore, userMove, addScore, minusScore], );
+  }, [randomMove, userScore, userMove], );
 
 
   return (
