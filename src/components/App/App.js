@@ -24,6 +24,15 @@ setUserMove(value)
   }
 /// lock in player move when button is clicked
 
+ //functions to update scores
+ function addScore(){
+  setUserScore(userScore++)
+        }
+  
+        function minusScore(){
+          setUserScore(userScore - 1)
+                }
+
  
   useEffect(() => {
     
@@ -45,14 +54,7 @@ setUserMove(value)
         
       }
 
-      //functions to update scores
-      function addScore(){
-setUserScore(userScore++)
-      }
-
-      function minusScore(){
-        setUserScore(userScore - 1)
-              }
+     
 
 // rock choice
 
@@ -93,7 +95,7 @@ if (userMove === "scissors" && randomMove === "scissors" ){
       console.log(`computer picked ${randomMove}`)
       console.log( `you picked ${userMove}`)
       
-  }, [randomMove, userScore, userMove], );
+  }, [randomMove, userScore, userMove, addScore, minusScore], );
 
 
   return (
