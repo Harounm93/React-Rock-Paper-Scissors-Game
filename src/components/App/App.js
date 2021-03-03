@@ -9,6 +9,7 @@ function App() {
   const [ComputerScore, setComputerScore] = useState(0);
   const [player, setPlayer] = useState('');
   const [winner, setWinner] = useState("Click a move to start game!")
+  const [turn, setTurn] = useState(0)
   
 let possibleMoves = [
   'rock',
@@ -30,13 +31,16 @@ let possibleMoves = [
     //set user move
     setUserMove(userMove);
 
+    //update round
+    setTurn(turn + 1)
+
     //Game logic is below
 
     //draw scenario: return early
 
     if (userMove === randomMove) {
       console.log('its a draw');
-      setWinner("this round was a draw, try again")
+      setWinner(`round ${turn} was a draw, try again`)
       return;
     }
 
@@ -49,7 +53,7 @@ let possibleMoves = [
       console.log('you gained a point');
       // addScore();
       setUserScore(userScore + 1);
-      setWinner(`${player} won this round`)
+      setWinner(`${player} won round ${turn}`)
       
     } 
     //lose scenarios below
@@ -62,7 +66,7 @@ let possibleMoves = [
       // minusScore();
       
       setComputerScore(ComputerScore + 1)
-      setWinner("computer won this round")
+      setWinner(`computer won round ${turn}`)
     }
   }
   
